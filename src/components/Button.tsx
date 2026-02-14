@@ -1,11 +1,16 @@
 'use client';
-interface btnprops{
-    title:string
+interface btnprops {
+    children: string;
 }
-export default function Button(props:btnprops) {
+export default function Button({ children }: btnprops) {
+     
     return (
         <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => console.log('click me')}>{props.title}</button>
+            <button
+                className='rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
+                onClick={() => console.log('click me')}>
+                {children}
+            </button>
         </div>
     );
 }
